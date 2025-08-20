@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_page_faq_lists",
+  "info": {
+    "displayName": "FAQ List"
+  },
+  "options": {},
+  "attributes": {
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    }
+  },
+  "config": {}
+}

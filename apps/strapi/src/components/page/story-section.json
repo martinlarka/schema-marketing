@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_page_story_sections",
+  "info": {
+    "displayName": "Story Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "timeline": {
+      "type": "component",
+      "component": "components.story-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

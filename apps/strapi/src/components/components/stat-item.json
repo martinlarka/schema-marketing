@@ -1,0 +1,70 @@
+{
+  "collectionName": "components_components_stat_items",
+  "info": {
+    "displayName": "Stat Item"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "Zap",
+        "Shield",
+        "BarChart3",
+        "Users",
+        "Clock",
+        "Lock",
+        "Smartphone",
+        "Workflow",
+        "ArrowLeft",
+        "ArrowRight",
+        "Book",
+        "Calendar",
+        "Check",
+        "CheckCircle",
+        "CheckIcon",
+        "ChevronDownIcon",
+        "ChevronRight",
+        "ChevronRightIcon",
+        "ChevronUpIcon",
+        "CircleIcon",
+        "CreditCard",
+        "Database",
+        "ExternalLink",
+        "FileText",
+        "Globe",
+        "GripVerticalIcon",
+        "Headphones",
+        "HelpCircle",
+        "Lightbulb",
+        "Mail",
+        "Menu",
+        "MessageCircle",
+        "MinusIcon",
+        "MoreHorizontal",
+        "PanelLeftIcon",
+        "Phone",
+        "Play",
+        "Quote",
+        "Rocket",
+        "Search",
+        "SearchIcon",
+        "Share2",
+        "Star",
+        "Target",
+        "TrendingUp",
+        "User",
+        "Video",
+        "X",
+        "XIcon"
+      ]
+    }
+  },
+  "config": {}
+}

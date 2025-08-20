@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_components_testimonial_items",
+  "info": {
+    "displayName": "Testimonial Item"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "rating": {
+      "type": "decimal"
+    },
+    "result": {
+      "type": "component",
+      "component": "components.testimonial-result",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

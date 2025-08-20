@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_components_pricing_items",
+  "info": {
+    "displayName": "Pricing Item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "text"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "including": {
+      "type": "text"
+    },
+    "excluding": {
+      "type": "text"
+    },
+    "button": {
+      "type": "string"
+    },
+    "isPopular": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

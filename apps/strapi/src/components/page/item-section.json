@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_page_item_sections",
+  "info": {
+    "displayName": "Card Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "cards": {
+      "type": "component",
+      "component": "components.card",
+      "repeatable": true
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": [
+        "sm",
+        "md",
+        "lg"
+      ]
+    }
+  },
+  "config": {}
+}

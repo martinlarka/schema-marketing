@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_components_story_items",
+  "info": {
+    "displayName": "Story Item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "year": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

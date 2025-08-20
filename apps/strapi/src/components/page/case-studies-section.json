@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_page_case_studies_sections",
+  "info": {
+    "displayName": "Case Studies Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "cases": {
+      "type": "component",
+      "component": "components.case-study",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

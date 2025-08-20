@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_components_case_results",
+  "info": {
+    "displayName": "Case Result"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

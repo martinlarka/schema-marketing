@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_page_faq_card_sections",
+  "info": {
+    "displayName": "FAQ Card Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
+    },
+    "tag": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tag.tag"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_components_pills",
+  "info": {
+    "displayName": "Pill"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "Zap",
+        "Shield",
+        "BarChart3",
+        "Users",
+        "Workflow",
+        "Database",
+        "Globe",
+        "Lock",
+        "Headphones",
+        "Smartphone",
+        "Rocket"
+      ]
+    }
+  },
+  "config": {}
+}

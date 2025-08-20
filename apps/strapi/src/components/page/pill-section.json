@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_page_pill_sections",
+  "info": {
+    "displayName": "Pill Section",
+    "icon": "bell"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "pills": {
+      "type": "component",
+      "component": "components.pill",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "page.hero",
+        "page.item-section",
+        "page.pill-section",
+        "page.call-to-action",
+        "page.pricing",
+        "page.faq-card-section",
+        "page.blog-list",
+        "page.faq-list",
+        "page.stats-section",
+        "page.story-section",
+        "page.testimonials-section",
+        "page.case-studies-section",
+        "page.resources-section"
+      ]
+    }
+  }
+}

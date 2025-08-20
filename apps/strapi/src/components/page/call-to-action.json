@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_page_call_to_actions",
+  "info": {
+    "displayName": "Call to action"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "links": {
+      "type": "component",
+      "component": "components.link",
+      "repeatable": true
+    },
+    "form": {
+      "type": "component",
+      "component": "components.form",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

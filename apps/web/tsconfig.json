@@ -4,8 +4,19 @@
     "plugins": [
       {
         "name": "next"
+      },
+      {
+        "name": "gql.tada/ts-plugin",
+        "schema": "http://localhost:1337/graphql",
+        "headers": {
+          "x-api-key": "1ac5bc33c390046d041af5e2a7594c82b6ba85886ec8ba6046a93f97ada9b4c03ebd2e2d1dd97b1de975dc5779289cb6b3b50981a23e36c29f871835f1eab91080b66beb269af1b873ec1283dc44888dc89cf744c546b41e36cd466b8b663a6b9b16d797df49e630ea7b4a26a1d5727e56bfd1050376b621f4c25d67d5ed6201"
+        },
+        "tadaOutputLocation": "./lib/graphql-env.d.ts"
       }
-    ]
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": [
     "**/*.ts",
@@ -14,7 +25,6 @@
     "next.config.js",
     ".next/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+
+  "exclude": ["node_modules"]
 }

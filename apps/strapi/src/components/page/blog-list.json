@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_page_blog_lists",
+  "info": {
+    "displayName": "Blog List"
+  },
+  "options": {},
+  "attributes": {
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    },
+    "featured_post": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blog.blog"
+    }
+  },
+  "config": {}
+}
