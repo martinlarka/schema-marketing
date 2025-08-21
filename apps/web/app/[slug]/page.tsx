@@ -89,6 +89,33 @@ export default async function Page({
   );
 }
 
+export async function generateStaticParams() {
+  const { pages } = await query(GET_PAGES_PARAMS);
+
+  return pages;
+}
+
+// export async function generateMetadata(
+//   { params, searchParams }: Props,
+//   parent: ResolvingMetadata
+// ): Promise<Metadata> {
+//   // read route params
+//   const { id } = await params
+
+//   // fetch data
+//   const product = await fetch(`https://.../${id}`).then((res) => res.json())
+
+//   // optionally access and extend (rather than replace) parent metadata
+//   const previousImages = (await parent).openGraph?.images || []
+
+//   return {
+//     title: product.title,
+//     openGraph: {
+//       images: ['/some-specific-page-image.jpg', ...previousImages],
+//     },
+//   }
+// }
+
 const GET_PAGE = graphql(
   `
     query Page($slug: String!) {
@@ -127,4 +154,15 @@ const GET_PAGE = graphql(
     PageBlogListFragment,
     PageResourcesSectionFragment,
   ]
+);
+
+const GET_PAGES_PARAMS = graphql(
+  `
+    query Page {
+      pages {
+        slug
+      }
+    }
+  `,
+  []
 );
