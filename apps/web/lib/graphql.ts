@@ -23,6 +23,8 @@ export async function query<TData, TVariables>(
       "Content-Type": "application/json",
       Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
     },
+    cache: "force-cache",
+    next: { revalidate: false },
     body: JSON.stringify({ query: queryString, variables }),
   });
 

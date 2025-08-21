@@ -6,6 +6,10 @@
       "dependsOn": [
         "^build"
       ],
+      "env": [
+        "STRAPI_GRAPHQL_URL",
+        "STRAPI_API_TOKEN"
+      ],
       "inputs": [
         "$TURBO_DEFAULT$",
         ".env*"
