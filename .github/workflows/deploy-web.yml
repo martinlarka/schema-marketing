@@ -1,0 +1,71 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    paths:
+      - "apps/web/**"
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - publish_web
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      deployments: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      # Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "yarn"
+
+      # Cache Yarn dependencies
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+            **/.eslintcache
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      # Install dependencies with Yarn
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      # Build Turbo repo (specifically web app)
+      - name: Build Turbo apps
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          STRAPI_URL_BASE: ${{ vars.STRAPI_URL_BASE }}
+          STRAPI_API_TOKEN: ${{ secrets.STRAPI_API_TOKEN }}
+          GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
+          NEXT_PUBLIC_CONTACT_URL: ${{ vars.NEXT_PUBLIC_CONTACT_URL }}
+          NEXT_PUBLIC_APP_PUBLIC_URL: ${{ vars.NEXT_PUBLIC_APP_PUBLIC_URL }}
+        run: yarn turbo run export --filter=web...
+
+      # Deploy to Cloudflare Pages
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ${{ github.event.repository.name  }}
+          directory: apps/web/out
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

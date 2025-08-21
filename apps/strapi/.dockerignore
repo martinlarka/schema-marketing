@@ -1,0 +1,48 @@
+# Node & Yarn
+node_modules
+npm-debug.log
+yarn-error.log
+.pnpm-store
+.pnp.*
+
+# Build & Output
+dist
+build
+.out
+.next
+.cache
+coverage
+turbo
+out
+*.log
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# OS / Editor
+.DS_Store
+*.swp
+*.swo
+.idea
+.vscode
+*.iml
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Testing & CI
+jest.config.js
+*.test.js
+*.spec.js
+__tests__
+
+# Strapi uploads (if using local provider, handled via volume instead)
+public/uploads

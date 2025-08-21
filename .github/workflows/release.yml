@@ -1,0 +1,26 @@
+name: CI release
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get next version
+        uses: reecetech/version-increment@2024.10.1
+        id: version
+        with:
+          use_api: true
+          scheme: calver
+
+      - name: Release version
+        uses: softprops/action-gh-release@v2
+        if: ${{ github.ref_name == github.event.repository.default_branch }}
+        with:
+          draft: false
+          prerelease: false
+          tag_name: "${{ steps.version.outputs.version }}"
