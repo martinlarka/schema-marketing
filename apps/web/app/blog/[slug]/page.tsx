@@ -15,9 +15,8 @@ export async function PageBlog({
   return <BlogPage blog={blog} />;
 }
 
-export async function xgenerateStaticParams() {
+export async function generateStaticParams() {
   const { blogs } = await query(GET_BLOGS_PARAMS);
-  console.log("blogs", blogs);
 
   return blogs;
 }
