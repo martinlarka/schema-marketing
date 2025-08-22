@@ -1,7 +1,7 @@
 import { graphql, query } from "@/lib/graphql";
 import { BlogPage } from "./blog-page";
 
-export async function PageBlog({
+export default async function PageBlog({
   params,
 }: {
   params: Promise<{ slug: string }>;
