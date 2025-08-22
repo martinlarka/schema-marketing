@@ -7,6 +7,7 @@ import { ArrowRight, Calendar } from "lucide-react";
 import Link from "next/link";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import Categories from "./ui/categories";
+import { Suspense } from "react";
 
 export async function PageBlogList({
   featured_post,
@@ -20,7 +21,9 @@ export async function PageBlogList({
     );
   return (
     <>
-      <Categories categories={categories} />
+      <Suspense fallback={null}>
+        <Categories categories={categories} />
+      </Suspense>
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">

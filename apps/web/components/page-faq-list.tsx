@@ -1,7 +1,5 @@
 import { graphql, query } from "@/lib/graphql";
 
-import { Button } from "./ui/button";
-
 import {
   Accordion,
   AccordionContent,
@@ -11,6 +9,7 @@ import {
 import { HelpCircle } from "lucide-react";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import Categories from "./ui/categories";
+import { Suspense } from "react";
 
 export async function PageFaqList() {
   const { faqs } = await query(GET_FAQ_LIST);
@@ -22,7 +21,9 @@ export async function PageFaqList() {
     );
   return (
     <>
-      <Categories categories={categories} />
+      <Suspense fallback={null}>
+        <Categories categories={categories} />
+      </Suspense>
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Accordion type="single" collapsible className="space-y-4">
